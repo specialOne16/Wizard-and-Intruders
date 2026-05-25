@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 # --- Settings ---
 @export_group("Movement")
@@ -18,6 +19,7 @@ var is_dashing := false
 var dash_timer := 0.0
 
 @onready var head = $Head # Make sure your Node3D is named 'Head'
+@onready var object_scan: RayCast3D = $Head/ObjectScan
 
 func _ready():
 	# Capture the mouse so it doesn't leave the game window
@@ -37,6 +39,12 @@ func _unhandled_input(event):
 	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			object_scan.force_raycast_update()
+			if object_scan.is_colliding():
+				var collider = object_scan.get_collider()
+				if collider is Node:
+					collider.queue_free()
 
 func _physics_process(delta):
 	# 1. Handle Gravity
@@ -78,6 +86,30 @@ func _physics_process(delta):
 
 	# Apply all movement
 	move_and_slide()
+
+	# 5. Enemy Detection with Raycast
+	if object_scan:
+		object_scan.force_raycast_update()
+		if object_scan.is_colliding():
+			var collider = object_scan.get_collider()
+			# Check the collider and its parents for the script (e.g., if we hit a collision shape)
+			var entity = collider
+			while entity:
+				if entity.has_method("been_hit_by_raycast"):
+					# Hide all rope climbers first, then show the one we hit
+					var rope_climbers = get_tree().get_nodes_in_group("rope_climbers")
+					for climber in rope_climbers:
+						if climber.has_method("been_hit_by_raycast"):
+							climber.been_hit_by_raycast(false)
+					entity.been_hit_by_raycast(true)
+					break
+				entity = entity.get_parent()
+		else:
+			# No collision - reset all rope climbers to hidden (they'll handle their own reset)
+			var rope_climbers = get_tree().get_nodes_in_group("rope_climbers")
+			for climber in rope_climbers:
+				if climber.has_method("been_hit_by_raycast"):
+					climber.been_hit_by_raycast(false)
 
 	# Optional: Press ESC to unlock mouse
 	if Input.is_action_just_pressed("ui_cancel"):

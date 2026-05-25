@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dnclcbmlbim0x"]
+
+[ext_resource type="Script" uid="uid://cxscp2nlnvnp3" path="res://entity/enemy/rope_climber/rope_climber.gd" id="1_ms220"]
+[ext_resource type="PackedScene" uid="uid://c02d5ktk18uq3" path="res://entity/enemy/rope_climber/assets/Rope_Climb.glb" id="2_ejdhw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l7q2e"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_ejdhw"]
+
+[node name="RopeClimber" type="CharacterBody3D" unique_id=579196645]
+script = ExtResource("1_ms220")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=554834837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_l7q2e")
+
+[node name="Rope_Climb" parent="." unique_id=672587274 instance=ExtResource("2_ejdhw")]
+
+[node name="AimRing" type="MeshInstance3D" parent="." unique_id=1394581533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("TorusMesh_ejdhw")

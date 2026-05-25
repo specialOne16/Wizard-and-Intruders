@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://f614lj70jrly" path="res://entity/player/player.tscn" id="3_ueusv"]
 [ext_resource type="PackedScene" uid="uid://o3k7s0sq8qfc" path="res://environments/assets/Door_Compressed.glb" id="4_gvicd"]
 [ext_resource type="PackedScene" uid="uid://bh7gewxqvx5xc" path="res://environments/assets/Drawbridge_Compressed.glb" id="5_7pdct"]
+[ext_resource type="PackedScene" uid="uid://dnclcbmlbim0x" path="res://entity/enemy/rope_climber/rope_climber.tscn" id="6_7pdct"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ktb3l"]
 panorama = ExtResource("1_41n4r")
@@ -70,9 +71,31 @@ shape = SubResource("BoxShape3D_gvicd")
 [node name="Player" parent="." unique_id=304570094 instance=ExtResource("3_ueusv")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 51.731323, 42.242332, 34.191345)
 motion_mode = 0
+walk_speed = 5.0
+jump_velocity = 4.5
+dash_speed = 20.0
+dash_duration = 0.2
+mouse_sensitivity = 0.002
+tilt_upper_limit = 1.5707963267948966
+tilt_lower_limit = -1.5707963267948966
 
 [node name="Ancient Castle with misty mountain" parent="." unique_id=191959669 instance=ExtResource("4_gvicd")]
 
 [node name="Ancient Castle with misty mountain3" parent="." unique_id=560949348 instance=ExtResource("5_7pdct")]
+
+[node name="RopeClimber" parent="." unique_id=579196645 instance=ExtResource("6_7pdct")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 31, 22, 36)
+
+[node name="RopeClimber2" parent="." unique_id=1641346797 instance=ExtResource("6_7pdct")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 75, 23, 36)
+
+[node name="RopeClimber3" parent="." unique_id=1720045095 instance=ExtResource("6_7pdct")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 70, 15, 36)
+
+[node name="RopeClimber4" parent="." unique_id=1640642971 instance=ExtResource("6_7pdct")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 28, 9, 36)
+
+[node name="RopeClimber5" parent="." unique_id=783516766 instance=ExtResource("6_7pdct")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 27, 28, 36)
 
 [editable path="Ancient Castle with misty mountain2"]
