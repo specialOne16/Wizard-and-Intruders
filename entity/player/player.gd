@@ -34,6 +34,9 @@ func _unhandled_input(event):
 		
 		# Clamp head rotation so you can't flip upside down
 		head.rotation.x = clamp(head.rotation.x, tilt_lower_limit, tilt_upper_limit)
+	
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
 	# 1. Handle Gravity
