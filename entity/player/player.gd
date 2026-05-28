@@ -49,7 +49,13 @@ func _unhandled_input(event):
 func _physics_process(delta):
 	# 1. Handle Gravity
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		# Only increase gravity when falling (velocity.y < 0), not when jumping up
+		if velocity.y < 0:
+			# Falling - fall faster
+			velocity.y -= gravity * 2 * delta
+		else:
+			# Jumping upward - normal gravity
+			velocity.y -= gravity * delta
 
 	# 2. Handle Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
