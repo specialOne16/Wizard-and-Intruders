@@ -42,7 +42,7 @@ environment = SubResource("Environment_7pdct")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1066239041]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_color = Color(0.5132743, 0.31761676, 0.16418025, 1)
+light_color = Color(0.9131544, 0.6814084, 0.51456386, 1)
 shadow_enabled = true
 
 [node name="Ancient Castle with misty mountain2" parent="." unique_id=334196879 instance=ExtResource("2_ueusv")]
@@ -71,13 +71,6 @@ shape = SubResource("BoxShape3D_gvicd")
 [node name="Player" parent="." unique_id=304570094 instance=ExtResource("3_ueusv")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 51.731323, 42.242332, 34.191345)
 motion_mode = 0
-walk_speed = 5.0
-jump_velocity = 4.5
-dash_speed = 20.0
-dash_duration = 0.2
-mouse_sensitivity = 0.002
-tilt_upper_limit = 1.5707963267948966
-tilt_lower_limit = -1.5707963267948966
 
 [node name="Ancient Castle with misty mountain" parent="." unique_id=191959669 instance=ExtResource("4_gvicd")]
 
@@ -99,3 +92,4 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 28, 
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 27, 28, 36)
 
 [editable path="Ancient Castle with misty mountain2"]
+[editable path="Player"]

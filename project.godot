@@ -15,6 +15,11 @@ run/main_scene="uid://bqh7dy14jirc4"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+
 [input]
 
 move_forward={
