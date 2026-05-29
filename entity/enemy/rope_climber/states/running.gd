@@ -5,10 +5,10 @@ class_name RunningRopeClimber
 @onready var wall_detector: Area3D = $"../../WallDetector"
 
 func enter(_previous_state_path: String, _data := {}) -> void:
-	wall_detector.area_entered.connect(_touches_wall)
+	wall_detector.body_entered.connect(_touches_wall)
 
 func exit() -> void:
-	wall_detector.area_exited.disconnect(_touches_wall)
+	wall_detector.body_entered.disconnect(_touches_wall)
 
 func physics_update(delta: float) -> void:
 	if not rope_climber.is_on_floor():
@@ -16,5 +16,5 @@ func physics_update(delta: float) -> void:
 	else:
 		rope_climber.velocity = Vector3.FORWARD * 3
 
-func _touches_wall(_area: Area3D):
+func _touches_wall(_area: Node3D):
 	finished.emit("ClimbingRopeClimber")

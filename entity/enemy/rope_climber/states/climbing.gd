@@ -6,11 +6,11 @@ class_name ClimbingRopeClimber
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	rope_climber.velocity = Vector3.UP * 2
-	wall_detector.area_exited.connect(_reach_top)
+	wall_detector.body_exited.connect(_reach_top)
 
 func exit() -> void:
 	rope_climber.velocity = Vector3.ZERO
-	wall_detector.area_exited.disconnect(_reach_top)
+	wall_detector.body_exited.disconnect(_reach_top)
 
-func _reach_top(_area: Area3D):
+func _reach_top(_area: Node3D):
 	finished.emit("AttackRopeClimber")

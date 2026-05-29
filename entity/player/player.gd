@@ -16,6 +16,7 @@ class_name Player
 
 @onready var head = $Head
 @onready var object_scan: RayCast3D = $Head/ObjectScan
+@onready var fall_area_detector: Area3D = $FallAreaDetector
 
 var is_dashing := false
 var dash_timer := 0.0
@@ -23,7 +24,11 @@ var dash_timer := 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	PlayerReference.instance = self
+	
+	fall_area_detector.area_entered.connect(func(_body): _spawn())
+	
 	_spawn()
 
 
