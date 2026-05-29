@@ -23,6 +23,7 @@ PlayerReference="*uid://dob0prx5viffv"
 
 window/size/viewport_width=2560
 window/size/viewport_height=1440
+window/stretch/mode="canvas_items"
 
 [input]
 
