@@ -2,12 +2,22 @@
 
 [ext_resource type="Script" uid="uid://cxscp2nlnvnp3" path="res://entity/enemy/rope_climber/rope_climber.gd" id="1_ms220"]
 [ext_resource type="PackedScene" uid="uid://c02d5ktk18uq3" path="res://entity/enemy/rope_climber/assets/Rope_Climb.glb" id="2_ejdhw"]
+[ext_resource type="Script" uid="uid://bnwynt8i480o4" path="res://system/state_machine.gd" id="3_5ssh6"]
+[ext_resource type="Script" uid="uid://devybgtq6qsx8" path="res://entity/enemy/rope_climber/states/climbing.gd" id="4_gs0w0"]
+[ext_resource type="Script" uid="uid://37g7n1217fui" path="res://entity/enemy/rope_climber/states/attack.gd" id="5_02u8u"]
+[ext_resource type="Script" uid="uid://7tjbcydp62fg" path="res://entity/enemy/rope_climber/states/running.gd" id="6_ti6ki"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l7q2e"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_ejdhw"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ti6ki"]
+height = 0.5
+radius = 1.0
+
 [node name="RopeClimber" type="CharacterBody3D" unique_id=579196645]
+collision_layer = 2
+collision_mask = 19
 script = ExtResource("1_ms220")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=554834837]
@@ -19,3 +29,29 @@ shape = SubResource("CapsuleShape3D_l7q2e")
 [node name="AimRing" type="MeshInstance3D" parent="." unique_id=1394581533]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("TorusMesh_ejdhw")
+
+[node name="WallDetector" type="Area3D" parent="." unique_id=1888737259]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallDetector" unique_id=1418073205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_ti6ki")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1116843357]
+
+[node name="StateMachine" type="Node" parent="." unique_id=23506401]
+script = ExtResource("3_5ssh6")
+metadata/_custom_type_script = "uid://bnwynt8i480o4"
+
+[node name="RunningRopeClimber" type="Node" parent="StateMachine" unique_id=701638534]
+script = ExtResource("6_ti6ki")
+metadata/_custom_type_script = "uid://7tjbcydp62fg"
+
+[node name="ClimbingRopeClimber" type="Node" parent="StateMachine" unique_id=359158066]
+script = ExtResource("4_gs0w0")
+metadata/_custom_type_script = "uid://devybgtq6qsx8"
+
+[node name="AttackRopeClimber" type="Node" parent="StateMachine" unique_id=1252953055]
+script = ExtResource("5_02u8u")
+metadata/_custom_type_script = "uid://37g7n1217fui"
