@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s6ncs0x0eve2"
-path.s3tc="res://.godot/imported/Rope_Climb_Paladin_normal.webp-a7d57968850a4b5fcb0ed8374fa6587b.s3tc.ctex"
+uid="uid://bvw4tnj2n4aou"
+path.s3tc="res://.godot/imported/Rope_Runner_Paladin_normal.webp-339f506d98d5ff859fe95f5a7dc1a6f4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://entity/enemy/rope_climber/assets/Rope_Climb_Paladin_normal.webp"
-dest_files=["res://.godot/imported/Rope_Climb_Paladin_normal.webp-a7d57968850a4b5fcb0ed8374fa6587b.s3tc.ctex"]
+source_file="res://entity/enemy/rope_climber/assets/Rope_Runner_Paladin_normal.webp"
+dest_files=["res://.godot/imported/Rope_Runner_Paladin_normal.webp-339f506d98d5ff859fe95f5a7dc1a6f4.s3tc.ctex"]
 
 [params]
 
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://entity/enemy/rope_climber/assets/Rope_Climb_Paladin_normal.webp"
+roughness/src_normal="res://entity/enemy/rope_climber/assets/Rope_Runner_Paladin_normal.webp"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

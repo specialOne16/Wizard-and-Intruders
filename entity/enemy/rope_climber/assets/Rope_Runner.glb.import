@@ -3,13 +3,13 @@
 importer="animation_library"
 importer_version=1
 type="AnimationLibrary"
-uid="uid://c02d5ktk18uq3"
-path="res://.godot/imported/Rope_Climb.glb-2e7c3ceba84832fe6f68ae8c261ebbd3.res"
+uid="uid://dvwae15jsyni3"
+path="res://.godot/imported/Rope_Runner.glb-e3385eceace326b64ce1a3daa871e03d.res"
 
 [deps]
 
-source_file="res://entity/enemy/rope_climber/assets/Rope_Climb.glb"
-dest_files=["res://.godot/imported/Rope_Climb.glb-2e7c3ceba84832fe6f68ae8c261ebbd3.res"]
+source_file="res://entity/enemy/rope_climber/assets/Rope_Runner.glb"
+dest_files=["res://.godot/imported/Rope_Runner.glb-e3385eceace326b64ce1a3daa871e03d.res"]
 
 [params]
 

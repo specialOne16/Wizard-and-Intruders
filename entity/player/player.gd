@@ -18,6 +18,8 @@ class_name Player
 @onready var object_scan: RayCast3D = $Head/ObjectScan
 @onready var fall_area_detector: Area3D = $FallAreaDetector
 
+@onready var dash_sound: AudioStreamPlayer = $Dash
+
 var is_dashing := false
 var dash_timer := 0.0
 
@@ -58,6 +60,7 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 	
 	if Input.is_action_just_pressed("dash") and not is_dashing:
+		dash_sound.play()
 		is_dashing = true
 		dash_timer = dash_duration
 	

@@ -3,18 +3,16 @@ class_name RunningRopeClimber
 
 @onready var rope_climber: RopeClimber = $"../.."
 @onready var wall_detector: Area3D = $"../../WallDetector"
+@onready var animation: AnimationPlayer = $"../../Body/Animation"
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	wall_detector.body_entered.connect(_touches_wall)
+	
+	animation.play("Rope_Runner/Armature|mixamo_com|Layer0")
+	rope_climber.velocity.z = -3
 
 func exit() -> void:
 	wall_detector.body_entered.disconnect(_touches_wall)
-
-func physics_update(delta: float) -> void:
-	if not rope_climber.is_on_floor():
-		rope_climber.velocity += rope_climber.get_gravity() * delta
-	else:
-		rope_climber.velocity = Vector3.FORWARD * 3
 
 func _touches_wall(_area: Node3D):
 	finished.emit("ClimbingRopeClimber")

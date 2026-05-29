@@ -48,8 +48,11 @@
 [ext_resource type="Texture2D" uid="uid://ci40ic0bl05qa" path="res://entity/player/assets/Wizard VFX & UI/Parry VFX/Parry_VFX-2.png" id="46_aennr"]
 [ext_resource type="Texture2D" uid="uid://bjtl3jqbduhnx" path="res://entity/player/assets/Wizard VFX & UI/Parry VFX/Parry_VFX-3.png" id="47_pwt3y"]
 [ext_resource type="Texture2D" uid="uid://0eheh2rmuy70" path="res://entity/player/assets/Wizard VFX & UI/Parry VFX/Parry_VFX-4.png" id="48_6svrl"]
+[ext_resource type="AudioStream" uid="uid://x1am1veipxyi" path="res://entity/player/audio/Dash.wav" id="50_eiu06"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uk44f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k7iom"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqnt1"]
 animations = [{
@@ -243,8 +246,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k7iom"]
-
 [node name="Player" type="CharacterBody3D" unique_id=304570094]
 collision_mask = 17
 floor_max_angle = 1.0471976
@@ -256,13 +257,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_uk44f")
 
 [node name="Head" type="Node3D" parent="." unique_id=894848268]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Head" unique_id=165597199]
+current = true
 
 [node name="Head" type="Camera3D" parent="Head" unique_id=1771288964]
 
 [node name="ObjectScan" type="RayCast3D" parent="Head" unique_id=1732353693]
 target_position = Vector3(0, 0, -200)
 collision_mask = 2
+
+[node name="FallAreaDetector" type="Area3D" parent="." unique_id=1199964741]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallAreaDetector" unique_id=246829330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_k7iom")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1522685591]
 
@@ -297,9 +308,5 @@ frame = 3
 frame_progress = 1.0
 centered = false
 
-[node name="FallAreaDetector" type="Area3D" parent="." unique_id=1199964741]
-collision_layer = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FallAreaDetector" unique_id=246829330]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_k7iom")
+[node name="Dash" type="AudioStreamPlayer" parent="." unique_id=626396517]
+stream = ExtResource("50_eiu06")
