@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name RopeClimber
 
 var gravity_enabled = true
+var target_beacon: Beacon
 
 func _physics_process(delta: float) -> void:
 	if gravity_enabled:

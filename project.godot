@@ -64,6 +64,7 @@ dash={
 3d_physics/layer_2="Enemy"
 3d_physics/layer_3="Beacon"
 3d_physics/layer_5="Wall"
+3d_physics/layer_6="Rope"
 
 [physics]
 

@@ -8,7 +8,6 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	animation_player.play("Rope_Runner/Armature|mixamo_com|Layer0")
 
 func physics_update(_delta: float) -> void:
-	var player = PlayerReference.get_instance()
-	if player:
-		var horizontal_velocity = rope_climber.global_position.direction_to(player.global_position) * 2
+	if rope_climber.target_beacon:
+		var horizontal_velocity = rope_climber.global_position.direction_to(rope_climber.target_beacon.global_position) * 2
 		rope_climber.velocity = Vector3(horizontal_velocity.x, rope_climber.velocity.y, horizontal_velocity.z)
