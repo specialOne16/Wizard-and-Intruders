@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2ue4y8oikiwq"
-path="res://.godot/imported/EntireCastle_Compressed.glb-b4093b2244ef73756e4ad93edcb2c7f6.scn"
+uid="uid://chnyyoptx2nwb"
+path="res://.godot/imported/BEACON.glb-6219e2e72e47a6ca91b94c5795598811.scn"
 
 [deps]
 
-source_file="res://environments/assets/EntireCastle_Compressed.glb"
-dest_files=["res://.godot/imported/EntireCastle_Compressed.glb-b4093b2244ef73756e4ad93edcb2c7f6.scn"]
+source_file="res://entity/beacon/assets/BEACON.glb"
+dest_files=["res://.godot/imported/BEACON.glb-6219e2e72e47a6ca91b94c5795598811.scn"]
 
 [params]
 

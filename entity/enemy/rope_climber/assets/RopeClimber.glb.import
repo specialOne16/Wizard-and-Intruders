@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2ue4y8oikiwq"
-path="res://.godot/imported/EntireCastle_Compressed.glb-b4093b2244ef73756e4ad93edcb2c7f6.scn"
+uid="uid://2etoehtvf35e"
+path="res://.godot/imported/RopeClimber.glb-c6f9591cd55fdad7e6ec25f07e714101.scn"
 
 [deps]
 
-source_file="res://environments/assets/EntireCastle_Compressed.glb"
-dest_files=["res://.godot/imported/EntireCastle_Compressed.glb-b4093b2244ef73756e4ad93edcb2c7f6.scn"]
+source_file="res://entity/enemy/rope_climber/assets/RopeClimber.glb"
+dest_files=["res://.godot/imported/RopeClimber.glb-c6f9591cd55fdad7e6ec25f07e714101.scn"]
 
 [params]
 

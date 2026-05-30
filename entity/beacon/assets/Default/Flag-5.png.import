@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmhmmqu5avj7"
-path.s3tc="res://.godot/imported/EntireCastle_Compressed_Side_Base_Color_1001.webp-0e2913859fcf8b89c52880b14274e003.s3tc.ctex"
+uid="uid://ceaqip7r7q61q"
+path.s3tc="res://.godot/imported/Flag-5.png-705e2ff681d7bb3a43d0439cddc13381.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "2f77308a9e7c7900dc33c56f2dd18988"
-}
 
 [deps]
 
-source_file="res://environments/assets/EntireCastle_Compressed_Side_Base_Color_1001.webp"
-dest_files=["res://.godot/imported/EntireCastle_Compressed_Side_Base_Color_1001.webp-0e2913859fcf8b89c52880b14274e003.s3tc.ctex"]
+source_file="res://entity/beacon/assets/Default/Flag-5.png"
+dest_files=["res://.godot/imported/Flag-5.png-705e2ff681d7bb3a43d0439cddc13381.s3tc.ctex"]
 
 [params]
 

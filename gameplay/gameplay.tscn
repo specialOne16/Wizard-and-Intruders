@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://bqh7dy14jirc4"]
 
 [ext_resource type="Texture2D" uid="uid://d0c4h4nhh3tyd" path="res://environments/assets/Sky_Image.PNG" id="1_41n4r"]
-[ext_resource type="PackedScene" uid="uid://cnf4kv6uovq1b" path="res://environments/assets/EntireCastle_Compressed.glb" id="2_ueusv"]
+[ext_resource type="PackedScene" uid="uid://d2ue4y8oikiwq" path="res://environments/assets/EntireCastle_Compressed.glb" id="2_ueusv"]
 [ext_resource type="PackedScene" uid="uid://f614lj70jrly" path="res://entity/player/player.tscn" id="3_ueusv"]
-[ext_resource type="PackedScene" uid="uid://o3k7s0sq8qfc" path="res://environments/assets/Door_Compressed.glb" id="4_gvicd"]
-[ext_resource type="PackedScene" uid="uid://bh7gewxqvx5xc" path="res://environments/assets/Drawbridge_Compressed.glb" id="5_7pdct"]
+[ext_resource type="PackedScene" uid="uid://b8igi5ieb7ifi" path="res://environments/assets/EntireCastle_Collision.tscn" id="5_gvicd"]
 [ext_resource type="Script" uid="uid://c75ienykomq0c" path="res://gameplay/enemy_spawner.gd" id="6_7pdct"]
-[ext_resource type="PackedScene" uid="uid://m1cgaxsfko0c" path="res://environments/assets/CollisionBoxes.glb" id="6_uk44f"]
+[ext_resource type="PackedScene" uid="uid://cqpdlfes88lst" path="res://entity/beacon/beacon.tscn" id="6_uk44f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ktb3l"]
 panorama = ExtResource("1_41n4r")
@@ -42,158 +41,20 @@ spawn_position = NodePath("../Map/PlayerSpawn")
 
 [node name="Map" type="Node3D" parent="." unique_id=1450219604]
 
+[node name="Ancient Castle with misty mountain" parent="Map" unique_id=1925669855 instance=ExtResource("2_ueusv")]
+
+[node name="EntireCastleCollision" parent="Map" unique_id=291424623 instance=ExtResource("5_gvicd")]
+collision_layer = 16
+collision_mask = 0
+
 [node name="PlayerSpawn" type="Node3D" parent="Map" unique_id=1628583655]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 51.790188, 46, 26.4)
-
-[node name="Ancient Castle with misty mountain2" parent="Map" unique_id=334196879 instance=ExtResource("2_ueusv")]
-
-[node name="Ancient Castle with misty mountain" parent="Map" unique_id=191959669 instance=ExtResource("4_gvicd")]
-
-[node name="Ancient Castle with misty mountain3" parent="Map" unique_id=560949348 instance=ExtResource("5_7pdct")]
 
 [node name="Floor" type="StaticBody3D" parent="Map" unique_id=2020728781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 6, 43)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Floor" unique_id=1255550663]
 shape = SubResource("BoxShape3D_gvicd")
-
-[node name="Ancient Castle with misty mountain4" parent="Map" unique_id=398297176 instance=ExtResource("6_uk44f")]
-
-[node name="CastleWall1" parent="Map/Ancient Castle with misty mountain4" index="0" unique_id=372585102]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall4" parent="Map/Ancient Castle with misty mountain4" index="1" unique_id=1112933191]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall2" parent="Map/Ancient Castle with misty mountain4" index="2" unique_id=1783548622]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall3" parent="Map/Ancient Castle with misty mountain4" index="3" unique_id=822766048]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall5" parent="Map/Ancient Castle with misty mountain4" index="4" unique_id=307551381]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall6" parent="Map/Ancient Castle with misty mountain4" index="5" unique_id=346224958]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall7" parent="Map/Ancient Castle with misty mountain4" index="6" unique_id=551795691]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall8" parent="Map/Ancient Castle with misty mountain4" index="7" unique_id=609614030]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall9" parent="Map/Ancient Castle with misty mountain4" index="8" unique_id=1291334016]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall10" parent="Map/Ancient Castle with misty mountain4" index="9" unique_id=34552350]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall11" parent="Map/Ancient Castle with misty mountain4" index="10" unique_id=1436796688]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall12" parent="Map/Ancient Castle with misty mountain4" index="11" unique_id=1432160017]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall16" parent="Map/Ancient Castle with misty mountain4" index="12" unique_id=231981277]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall17" parent="Map/Ancient Castle with misty mountain4" index="13" unique_id=223922381]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall18" parent="Map/Ancient Castle with misty mountain4" index="14" unique_id=937413927]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall19" parent="Map/Ancient Castle with misty mountain4" index="15" unique_id=791479954]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall20" parent="Map/Ancient Castle with misty mountain4" index="16" unique_id=324601296]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall21" parent="Map/Ancient Castle with misty mountain4" index="17" unique_id=1041182330]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall22" parent="Map/Ancient Castle with misty mountain4" index="18" unique_id=1393503562]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall23" parent="Map/Ancient Castle with misty mountain4" index="19" unique_id=1474243062]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall24" parent="Map/Ancient Castle with misty mountain4" index="20" unique_id=550588254]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall13" parent="Map/Ancient Castle with misty mountain4" index="21" unique_id=126992635]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall14" parent="Map/Ancient Castle with misty mountain4" index="22" unique_id=582118005]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall15" parent="Map/Ancient Castle with misty mountain4" index="23" unique_id=2063022585]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall25" parent="Map/Ancient Castle with misty mountain4" index="24" unique_id=785686864]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall26" parent="Map/Ancient Castle with misty mountain4" index="25" unique_id=853706535]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall27" parent="Map/Ancient Castle with misty mountain4" index="26" unique_id=1988948932]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall28" parent="Map/Ancient Castle with misty mountain4" index="27" unique_id=17170461]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall30" parent="Map/Ancient Castle with misty mountain4" index="28" unique_id=1161473212]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall29" parent="Map/Ancient Castle with misty mountain4" index="29" unique_id=481145515]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall34" parent="Map/Ancient Castle with misty mountain4" index="30" unique_id=265790645]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall31" parent="Map/Ancient Castle with misty mountain4" index="31" unique_id=120184012]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall33" parent="Map/Ancient Castle with misty mountain4" index="32" unique_id=1920893232]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CastleWall32" parent="Map/Ancient Castle with misty mountain4" index="33" unique_id=294260141]
-collision_layer = 16
-collision_mask = 0
 
 [node name="PlayerFallArea" type="Area3D" parent="Map" unique_id=1499105099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 20, 43)
@@ -204,25 +65,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -3)
 shape = SubResource("BoxShape3D_uk44f")
 debug_color = Color(0.76442933, 0.44405824, 0.19535378, 0.41960785)
 
+[node name="LeftBeacon" parent="Map" unique_id=1651308747 instance=ExtResource("6_uk44f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.94062, 40.843758, 34.673992)
+
+[node name="CenterLeftBeacon" parent="Map" unique_id=1374160523 instance=ExtResource("6_uk44f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.247, 40.844, 32.851)
+
+[node name="CenterRightBeacon" parent="Map" unique_id=202620935 instance=ExtResource("6_uk44f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.046284, 40.843758, 32.85098)
+
+[node name="RightBeacon" parent="Map" unique_id=945777867 instance=ExtResource("6_uk44f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.70715, 40.843758, 34.673992)
+
 [node name="EnemySpawner" type="Timer" parent="." unique_id=682870018 node_paths=PackedStringArray("spawner")]
 wait_time = 2.0
 autostart = true
 script = ExtResource("6_7pdct")
-spawner = [NodePath("Node3D"), NodePath("Node3D2"), NodePath("Node3D3"), NodePath("Node3D4")]
+spawner = [NodePath("Left"), NodePath("CenterLeft"), NodePath("CenterRight"), NodePath("Right")]
 metadata/_custom_type_script = "uid://c75ienykomq0c"
 
-[node name="Node3D" type="Node3D" parent="EnemySpawner" unique_id=1165440718]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 9, 75)
+[node name="Left" type="Node3D" parent="EnemySpawner" unique_id=394404882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 10, 44)
 
-[node name="Node3D2" type="Node3D" parent="EnemySpawner" unique_id=1431329194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 9, 75)
+[node name="CenterLeft" type="Node3D" parent="EnemySpawner" unique_id=1758009200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.830086, 10, 45.639687)
 
-[node name="Node3D3" type="Node3D" parent="EnemySpawner" unique_id=1541581145]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69, 9, 75)
+[node name="CenterRight" type="Node3D" parent="EnemySpawner" unique_id=640648102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.44559, 10, 46.246975)
 
-[node name="Node3D4" type="Node3D" parent="EnemySpawner" unique_id=1818692860]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73, 9, 75)
+[node name="Right" type="Node3D" parent="EnemySpawner" unique_id=635984640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.45787, 10, 44.72875)
 
 [editable path="Player"]
-[editable path="Map/Ancient Castle with misty mountain2"]
-[editable path="Map/Ancient Castle with misty mountain4"]

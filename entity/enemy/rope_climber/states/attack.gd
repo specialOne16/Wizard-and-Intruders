@@ -2,10 +2,10 @@ extends State
 class_name AttackRopeClimber
 
 @onready var rope_climber: RopeClimber = $"../.."
-@onready var animation: AnimationPlayer = $"../../Body/Animation"
+@onready var animation_player: AnimationPlayer = $"../../RopeClimber/AnimationPlayer2"
 
 func enter(_previous_state_path: String, _data := {}) -> void:
-	animation.play("Rope_Runner/Armature|mixamo_com|Layer0")
+	animation_player.play("Rope_Runner/Armature|mixamo_com|Layer0")
 
 func physics_update(_delta: float) -> void:
 	var player = PlayerReference.get_instance()

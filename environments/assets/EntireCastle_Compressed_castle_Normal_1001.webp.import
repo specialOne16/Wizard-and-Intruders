@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6km16oqg7nr"
+uid="uid://ceqvovxc6n048"
 path.s3tc="res://.godot/imported/EntireCastle_Compressed_castle_Normal_1001.webp-72e8f19a459bf91782454c7022916656.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://EntireCastle_Compressed_castle_Normal_1001.webp"
+roughness/src_normal="res://environments/assets/EntireCastle_Compressed_castle_Normal_1001.webp"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
