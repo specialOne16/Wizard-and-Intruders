@@ -14,4 +14,4 @@ func exit() -> void:
 
 func physics_update(_delta: float) -> void:
 	if above_wall_detector.is_colliding():
-		finished.emit("AttackRopeClimber")
+		finished.emit("ChaseBeaconRopeClimber")

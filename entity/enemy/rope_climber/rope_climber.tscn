@@ -5,10 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://2etoehtvf35e" path="res://entity/enemy/rope_climber/assets/RopeClimber.glb" id="2_guyib"]
 [ext_resource type="Script" uid="uid://bnwynt8i480o4" path="res://system/state_machine.gd" id="3_5ssh6"]
 [ext_resource type="AnimationLibrary" uid="uid://dvwae15jsyni3" path="res://entity/enemy/rope_climber/assets/Rope_Runner.glb" id="3_o0lfm"]
+[ext_resource type="AnimationLibrary" uid="uid://nmlldwyh7pg0" path="res://entity/enemy/rope_climber/assets/Rope_AttackV1.glb" id="3_pvrij"]
+[ext_resource type="AnimationLibrary" uid="uid://but61in03jjiy" path="res://entity/enemy/rope_climber/assets/Rope_AttackV2.glb" id="4_7byyc"]
 [ext_resource type="Script" uid="uid://devybgtq6qsx8" path="res://entity/enemy/rope_climber/states/climbing.gd" id="4_gs0w0"]
-[ext_resource type="Script" uid="uid://37g7n1217fui" path="res://entity/enemy/rope_climber/states/attack.gd" id="5_02u8u"]
+[ext_resource type="Script" uid="uid://37g7n1217fui" path="res://entity/enemy/rope_climber/states/chase_beacon.gd" id="5_02u8u"]
 [ext_resource type="Script" uid="uid://7tjbcydp62fg" path="res://entity/enemy/rope_climber/states/running.gd" id="6_ti6ki"]
 [ext_resource type="Script" uid="uid://bn5u43fgqu0j7" path="res://entity/enemy/rope_climber/states/getting_on.gd" id="8_vix2c"]
+[ext_resource type="Script" uid="uid://c6u7st6qinqru" path="res://entity/enemy/rope_climber/states/attack_beacon.gd" id="10_6tu4i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l7q2e"]
 radius = 0.3
@@ -28,6 +31,8 @@ shape = SubResource("CapsuleShape3D_l7q2e")
 [node name="RopeClimber" parent="." unique_id=819320458 instance=ExtResource("2_guyib")]
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="RopeClimber" unique_id=321960990]
+libraries/Rope_AttackV1 = ExtResource("3_pvrij")
+libraries/Rope_AttackV2 = ExtResource("4_7byyc")
 libraries/Rope_Climb = ExtResource("2_ejdhw")
 libraries/Rope_Runner = ExtResource("3_o0lfm")
 
@@ -42,7 +47,12 @@ collision_mask = 32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RopeDetector" unique_id=1418073205]
 shape = SubResource("CylinderShape3D_ti6ki")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1116843357]
+[node name="BeaconDetector" type="Area3D" parent="." unique_id=604667901]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BeaconDetector" unique_id=1086146106]
+shape = SubResource("CylinderShape3D_ti6ki")
 
 [node name="StateMachine" type="Node" parent="." unique_id=23506401]
 script = ExtResource("3_5ssh6")
@@ -60,6 +70,10 @@ metadata/_custom_type_script = "uid://devybgtq6qsx8"
 script = ExtResource("8_vix2c")
 metadata/_custom_type_script = "uid://bn5u43fgqu0j7"
 
-[node name="AttackRopeClimber" type="Node" parent="StateMachine" unique_id=1252953055]
+[node name="ChaseBeaconRopeClimber" type="Node" parent="StateMachine" unique_id=1252953055]
 script = ExtResource("5_02u8u")
 metadata/_custom_type_script = "uid://37g7n1217fui"
+
+[node name="AttackBeaconRopeClimber" type="Node" parent="StateMachine" unique_id=1914833408]
+script = ExtResource("10_6tu4i")
+metadata/_custom_type_script = "uid://c6u7st6qinqru"
