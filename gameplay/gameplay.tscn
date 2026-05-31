@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b8igi5ieb7ifi" path="res://environments/assets/EntireCastle_Collision.tscn" id="5_gvicd"]
 [ext_resource type="Script" uid="uid://c75ienykomq0c" path="res://gameplay/enemy_spawner.gd" id="6_7pdct"]
 [ext_resource type="PackedScene" uid="uid://cqpdlfes88lst" path="res://entity/beacon/beacon.tscn" id="6_uk44f"]
+[ext_resource type="PackedScene" uid="uid://d0jd2y8dghwjx" path="res://gameplay/flag_ui.tscn" id="7_uk44f"]
+[ext_resource type="Texture2D" uid="uid://40uhg83q1hoo" path="res://gameplay/assets/Rope Climber/Rope-1.png" id="8_nimes"]
+[ext_resource type="Texture2D" uid="uid://bddnp3pgtbrsb" path="res://gameplay/assets/Rope Climber/Rope-2.png" id="9_2okcp"]
+[ext_resource type="Texture2D" uid="uid://cvte1eeoudubk" path="res://gameplay/assets/Rope Climber/Rope-3.png" id="10_vyivm"]
+[ext_resource type="Script" uid="uid://6koe6scy4wql" path="res://gameplay/label.gd" id="11_2okcp"]
+[ext_resource type="Script" uid="uid://7rix2c8wvtpw" path="res://gameplay/canvas_layer_2.gd" id="12_vyivm"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ktb3l"]
 panorama = ExtResource("1_41n4r")
@@ -64,6 +70,23 @@ height = 35.515625
 top_radius = 0.01
 bottom_radius = 0.01
 height = 35.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uqgqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nimes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2okcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vyivm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="Gameplay" type="Node3D" unique_id=1217063489]
 
@@ -182,5 +205,71 @@ shape = SubResource("CylinderShape3D_uk44f")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EnemySpawner/RightRope" unique_id=974423478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 mesh = SubResource("CylinderMesh_uk44f")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1450931742]
+process_mode = 3
+script = ExtResource("12_vyivm")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=788118450]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1254902, 0.1254902, 0.1254902, 0.46666667)
+
+[node name="Button" type="Button" parent="CanvasLayer2" unique_id=1062207630]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -67.0
+offset_right = 165.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 92
+text = "Restart"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1586809926]
+process_mode = 3
+
+[node name="FlagUI" parent="CanvasLayer" unique_id=244731564 node_paths=PackedStringArray("beacon") instance=ExtResource("7_uk44f")]
+position = Vector2(2435, 120)
+beacon = NodePath("../../Map/LeftBeacon")
+
+[node name="FlagUI2" parent="CanvasLayer" unique_id=1216296919 node_paths=PackedStringArray("beacon") instance=ExtResource("7_uk44f")]
+position = Vector2(2246, 120)
+beacon = NodePath("../../Map/CenterLeftBeacon")
+
+[node name="FlagUI3" parent="CanvasLayer" unique_id=1618955389 node_paths=PackedStringArray("beacon") instance=ExtResource("7_uk44f")]
+position = Vector2(2051, 120)
+beacon = NodePath("../../Map/CenterRightBeacon")
+
+[node name="FlagUI4" parent="CanvasLayer" unique_id=1705111759 node_paths=PackedStringArray("beacon") instance=ExtResource("7_uk44f")]
+position = Vector2(1858, 120)
+beacon = NodePath("../../Map/RightBeacon")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1896139821]
+position = Vector2(125, 121)
+sprite_frames = SubResource("SpriteFrames_uqgqx")
+autoplay = "default"
+frame_progress = 0.8364799
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1582519663]
+offset_left = 223.0
+offset_top = 50.0
+offset_right = 274.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0.12941177, 0.13333334, 0.18039216, 1)
+theme_override_colors/font_outline_color = Color(0.31764707, 0.31764707, 0.31764707, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 90
+text = "9"
+script = ExtResource("11_2okcp")
+
+[connection signal="pressed" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_pressed"]
 
 [editable path="Player"]

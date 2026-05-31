@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://7tjbcydp62fg" path="res://entity/enemy/rope_climber/states/running.gd" id="6_ti6ki"]
 [ext_resource type="Script" uid="uid://bn5u43fgqu0j7" path="res://entity/enemy/rope_climber/states/getting_on.gd" id="8_vix2c"]
 [ext_resource type="Script" uid="uid://c6u7st6qinqru" path="res://entity/enemy/rope_climber/states/attack_beacon.gd" id="10_6tu4i"]
+[ext_resource type="Script" uid="uid://ms1wpobuhm0t" path="res://entity/enemy/rope_climber/states/idle.gd" id="13_7byyc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l7q2e"]
 radius = 0.3
@@ -21,7 +22,7 @@ height = 0.5
 
 [node name="RopeClimber" type="CharacterBody3D" unique_id=579196645]
 collision_layer = 2
-collision_mask = 19
+collision_mask = 16
 script = ExtResource("1_ms220")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=554834837]
@@ -77,3 +78,7 @@ metadata/_custom_type_script = "uid://37g7n1217fui"
 [node name="AttackBeaconRopeClimber" type="Node" parent="StateMachine" unique_id=1914833408]
 script = ExtResource("10_6tu4i")
 metadata/_custom_type_script = "uid://c6u7st6qinqru"
+
+[node name="IdleRopeClimber" type="Node" parent="StateMachine" unique_id=401671669]
+script = ExtResource("13_7byyc")
+metadata/_custom_type_script = "uid://ms1wpobuhm0t"

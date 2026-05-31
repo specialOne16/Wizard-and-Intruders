@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d0jd2y8dghwjx"]
+
+[ext_resource type="Texture2D" uid="uid://cgmo5myoshsp2" path="res://gameplay/assets/Flag Broke/Flag_Broke-1.png" id="1_n30rw"]
+[ext_resource type="Texture2D" uid="uid://baw2vwawjprxx" path="res://gameplay/assets/Flag Broke/Flag_Broke-2.png" id="2_gnfei"]
+[ext_resource type="Texture2D" uid="uid://ccociglenvnkg" path="res://gameplay/assets/Flag Broke/Flag_Broke-3.png" id="3_uabpy"]
+[ext_resource type="Texture2D" uid="uid://ds16pi03r3wny" path="res://gameplay/assets/Flag Safe/Flag_Ui-1.png" id="4_4deea"]
+[ext_resource type="Texture2D" uid="uid://t7uhls0udjmk" path="res://gameplay/assets/Flag Safe/Flag_Ui-2.png" id="5_m7wod"]
+[ext_resource type="Texture2D" uid="uid://cipv4vv88we7s" path="res://gameplay/assets/Flag Safe/Flag_Ui-3.png" id="6_lsq5b"]
+[ext_resource type="Script" uid="uid://dpq4u4sl72gd0" path="res://gameplay/flag_ui.gd" id="7_gnfei"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjv5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n30rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gnfei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uabpy")
+}],
+"loop": true,
+"name": &"broke",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4deea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m7wod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lsq5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="FlagUI" type="AnimatedSprite2D" unique_id=244731564]
+sprite_frames = SubResource("SpriteFrames_cjv5x")
+autoplay = "default"
+frame_progress = 0.65813416
+script = ExtResource("7_gnfei")

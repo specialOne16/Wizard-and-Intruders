@@ -27,3 +27,5 @@ func spawn():
 	climber.global_transform = ropes[index].global_transform.translated(Vector3.BACK * 5)
 	climber.target_beacon = beacon
 	add_sibling(climber)
+	
+	Globals.current_rope_climber += 1

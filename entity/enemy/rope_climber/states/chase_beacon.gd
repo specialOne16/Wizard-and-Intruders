@@ -12,6 +12,8 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	beacon_detector.area_entered.connect(_reach_beacon)
 	
 	if deg == 0: deg = -1
+	rope_climber.set_collision_mask_value(1, true)
+	rope_climber.set_collision_mask_value(2, true)
 
 func exit() -> void:
 	rope_climber.velocity = Vector3.ZERO
