@@ -54,6 +54,48 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k7iom"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xj2kk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_csmo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ewm5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_krc1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_vcpbk")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_2l6hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_aennr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_pwt3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_6svrl")
+}],
+"loop": false,
+"name": &"parry",
+"speed": 6.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqnt1"]
 animations = [{
 "frames": [{
@@ -204,48 +246,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xj2kk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("41_csmo2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_ewm5v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_krc1u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_vcpbk")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 6.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"default",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45_2l6hj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_aennr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_pwt3y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_6svrl")
-}],
-"loop": false,
-"name": &"parry",
-"speed": 6.0
-}]
-
 [node name="Player" type="CharacterBody3D" unique_id=304570094]
 collision_mask = 17
 floor_max_angle = 1.0471976
@@ -265,7 +265,7 @@ current = true
 [node name="Head" type="Camera3D" parent="Head" unique_id=1771288964]
 
 [node name="ObjectScan" type="RayCast3D" parent="Head" unique_id=1732353693]
-target_position = Vector3(0, 0, -200)
+target_position = Vector3(0, 0, -4)
 collision_mask = 2
 
 [node name="FallAreaDetector" type="Area3D" parent="." unique_id=1199964741]
@@ -295,16 +295,18 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WizardHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=926413079]
-sprite_frames = SubResource("SpriteFrames_nqnt1")
-animation = &"run"
-frame_progress = 0.19309857
-centered = false
-
 [node name="VFX" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1313849561]
+visible = false
 sprite_frames = SubResource("SpriteFrames_xj2kk")
 animation = &"attack"
 frame = 3
+frame_progress = 1.0
+centered = false
+
+[node name="WizardHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=926413079]
+sprite_frames = SubResource("SpriteFrames_nqnt1")
+animation = &"attack"
+frame = 9
 frame_progress = 1.0
 centered = false
 

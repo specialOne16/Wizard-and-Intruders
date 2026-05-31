@@ -17,6 +17,8 @@ class_name Player
 @onready var head = $Head
 @onready var object_scan: RayCast3D = $Head/ObjectScan
 @onready var fall_area_detector: Area3D = $FallAreaDetector
+@onready var wizard_hand: AnimatedSprite2D = $CanvasLayer/WizardHand
+@onready var vfx: AnimatedSprite2D = $CanvasLayer/VFX
 
 @onready var dash_sound: AudioStreamPlayer = $Dash
 
@@ -42,6 +44,20 @@ func _unhandled_input(event):
 	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if not wizard_hand.is_playing():
+			wizard_hand.play("attack")
+			
+			await get_tree().create_timer(0.5).timeout
+			if object_scan.is_colliding():
+				var collider = object_scan.get_collider()
+				if collider is RopeClimber:
+					Globals.current_rope_climber -= 1
+					collider.queue_free()
+			
+			vfx.visible = true
+			vfx.play("attack")
+			await vfx.animation_finished
+			vfx.visible = false
 
 
 func _spawn():
