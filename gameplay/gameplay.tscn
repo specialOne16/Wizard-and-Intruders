@@ -23,6 +23,13 @@ tonemap_mode = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvicd"]
 size = Vector3(200, 1, 200)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pdct"]
+albedo_color = Color(0.28344613, 0.45991248, 0.27332222, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uk44f"]
+material = SubResource("StandardMaterial3D_7pdct")
+size = Vector3(100000, 1, 100000)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk44f"]
 size = Vector3(200, 1, 200)
 
@@ -89,6 +96,9 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Floor" unique_id=1255550663]
 shape = SubResource("BoxShape3D_gvicd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Floor" unique_id=1088641804]
+mesh = SubResource("BoxMesh_uk44f")
 
 [node name="PlayerFallArea" type="Area3D" parent="Map" unique_id=1499105099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 20, 43)
