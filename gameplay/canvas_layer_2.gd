@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var restart_flag: AudioStreamPlayer = $"../RestartFlag"
+
 func _ready() -> void:
 	visible = false
 
@@ -11,6 +13,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	restart_flag.play()
 	Globals.current_rope_climber = 0
 	Globals.brach_count = 0
 	get_tree().paused = false

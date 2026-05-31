@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cvte1eeoudubk" path="res://gameplay/assets/Rope Climber/Rope-3.png" id="10_vyivm"]
 [ext_resource type="Script" uid="uid://6koe6scy4wql" path="res://gameplay/label.gd" id="11_2okcp"]
 [ext_resource type="Script" uid="uid://7rix2c8wvtpw" path="res://gameplay/canvas_layer_2.gd" id="12_vyivm"]
+[ext_resource type="AudioStream" uid="uid://birm60ubwevym" path="res://gameplay/assets/Nature_ambience.mp3" id="13_uqgqx"]
+[ext_resource type="AudioStream" uid="uid://b6i5t3m0o34co" path="res://gameplay/assets/Restart_Flag.mp3" id="14_4rcc0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ktb3l"]
 panorama = ExtResource("1_41n4r")
@@ -256,7 +258,7 @@ beacon = NodePath("../../Map/RightBeacon")
 position = Vector2(125, 121)
 sprite_frames = SubResource("SpriteFrames_uqgqx")
 autoplay = "default"
-frame_progress = 0.8364799
+frame_progress = 0.47442645
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1582519663]
 offset_left = 223.0
@@ -269,6 +271,14 @@ theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 90
 text = "9"
 script = ExtResource("11_2okcp")
+
+[node name="NatureAmbience" type="AudioStreamPlayer" parent="." unique_id=1238120056]
+stream = ExtResource("13_uqgqx")
+autoplay = true
+parameters/looping = true
+
+[node name="RestartFlag" type="AudioStreamPlayer" parent="." unique_id=2012969306]
+stream = ExtResource("14_4rcc0")
 
 [connection signal="pressed" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_pressed"]
 

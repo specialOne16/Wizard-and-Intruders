@@ -5,4 +5,4 @@ extends AnimatedSprite2D
 func _process(_delta: float) -> void:
 	if animation == "default" and beacon.health <= 0:
 		play("broke")
-		Globals.brach_count += 1
+		Globals.breach()

@@ -1,6 +1,7 @@
 extends State
 class_name AttackBeaconRopeClimber
 
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $"../../AudioStreamPlayer3D"
 @onready var rope_climber: RopeClimber = $"../.."
 @onready var beacon_detector: Area3D = $"../../BeaconDetector"
 @onready var animation_player: AnimationPlayer = $"../../RopeClimber/AnimationPlayer2"
@@ -18,5 +19,6 @@ func update(_delta: float) -> void:
 
 func _next_attack(anim_name: StringName):
 	rope_climber.target_beacon.attack()
+	audio_stream_player_3d.play()
 	if anim_name.contains("Attack"):
 		animation_player.play(["Rope_AttackV1/Armature|mixamo_com|Layer0", "Rope_AttackV2/Armature|mixamo_com|Layer0"].pick_random())
