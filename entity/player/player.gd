@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+const BRICK = preload("uid://c3q7cw5ireg4q")
+
 @export var spawn_position: Node3D
 
 @export_group("Movement")
@@ -24,7 +26,7 @@ class_name Player
 
 var is_dashing := false
 var dash_timer := 0.0
-
+var charge_duration = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -43,25 +45,54 @@ func _unhandled_input(event):
 		head.rotation.x = clamp(head.rotation.x, tilt_lower_limit, tilt_upper_limit)
 	
 	if event is InputEventMouseButton:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		if not wizard_hand.is_playing():
-			wizard_hand.play("attack")
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			if wizard_hand.animation == "default":
+				wizard_hand.play("attack")
 			
-			await get_tree().create_timer(0.5).timeout
-			if object_scan.is_colliding():
-				var collider = object_scan.get_collider()
-				if collider is RopeClimber:
-					Globals.current_rope_climber -= 1
-					collider.queue_free()
-			
-			vfx.visible = true
-			vfx.play("attack")
-			await vfx.animation_finished
-			vfx.visible = false
+				await get_tree().create_timer(0.25).timeout
+				if object_scan.is_colliding():
+					var collider = object_scan.get_collider()
+					if collider is RopeClimber:
+						Globals.current_rope_climber -= 1
+						collider.queue_free()
+				
+				vfx.visible = true
+				vfx.play("attack")
+				await vfx.animation_finished
+				vfx.visible = false
+				
+				await wizard_hand.animation_finished
+				wizard_hand.play("default")
+		
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			if event.pressed and wizard_hand.animation == "default":
+				wizard_hand.play("charge")
+				charge_duration = 0
+			if not event.pressed and wizard_hand.animation == "charge":
+				if charge_duration >= 0.85:
+					var brick: Brick = BRICK.instantiate()
+					brick.position = position + Vector3.UP * 1.5
+					brick.linear_velocity = Vector3.FORWARD.rotated(
+						Vector3.UP, object_scan.global_rotation.y
+					).rotated(
+						Vector3.MODEL_RIGHT, object_scan.global_rotation.x
+					) * 15
+					add_sibling(brick)
+					
+					wizard_hand.play("release")
+					await wizard_hand.animation_finished
+					wizard_hand.play("default")
+				else:
+					wizard_hand.play("default")
 
 
 func _spawn():
 	global_transform = spawn_position.global_transform 
+
+
+func _process(delta: float) -> void:
+	charge_duration += delta
 
 
 func _physics_process(delta):

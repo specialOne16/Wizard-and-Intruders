@@ -71,7 +71,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [],
 "loop": false,
@@ -131,7 +131,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -172,10 +172,13 @@ animations = [{
 }],
 "loop": false,
 "name": &"charge",
-"speed": 6.0
+"speed": 12.0
 }, {
-"frames": [],
-"loop": false,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k7iom")
+}],
+"loop": true,
 "name": &"default",
 "speed": 6.0
 }, {
@@ -223,7 +226,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"release",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -305,9 +308,8 @@ centered = false
 
 [node name="WizardHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=926413079]
 sprite_frames = SubResource("SpriteFrames_nqnt1")
-animation = &"attack"
-frame = 9
-frame_progress = 1.0
+animation = &"release"
+autoplay = "default"
 centered = false
 
 [node name="Dash" type="AudioStreamPlayer" parent="." unique_id=626396517]
