@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wizard and Intruders"
-run/main_scene="uid://bqh7dy14jirc4"
+run/main_scene="uid://b4u0lpgftyp01"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

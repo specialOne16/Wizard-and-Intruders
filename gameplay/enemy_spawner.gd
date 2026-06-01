@@ -2,6 +2,8 @@ extends Timer
 class_name EnemySpawner
 
 const ROPE_CLIMBER = preload("uid://dnclcbmlbim0x")
+const a = 10.0
+const b = 6.0
 
 @onready var left_rope: Area3D = $LeftRope
 @onready var right_rope: Area3D = $RightRope
@@ -29,3 +31,6 @@ func spawn():
 	add_sibling(climber)
 	
 	Globals.current_rope_climber += 1
+	var dlay = a - ((a * b) / (Globals.current_rope_climber + b))
+	print(dlay)
+	start(dlay)

@@ -7,13 +7,24 @@
 [ext_resource type="Script" uid="uid://c75ienykomq0c" path="res://gameplay/enemy_spawner.gd" id="6_7pdct"]
 [ext_resource type="PackedScene" uid="uid://cqpdlfes88lst" path="res://entity/beacon/beacon.tscn" id="6_uk44f"]
 [ext_resource type="PackedScene" uid="uid://d0jd2y8dghwjx" path="res://gameplay/flag_ui.tscn" id="7_uk44f"]
+[ext_resource type="Texture2D" uid="uid://2i4tsujhh5gw" path="res://menu/assets/Air Invasion/Air_Invasion_Menu-1.png" id="8_53nod"]
 [ext_resource type="Texture2D" uid="uid://40uhg83q1hoo" path="res://gameplay/assets/Rope Climber/Rope-1.png" id="8_nimes"]
 [ext_resource type="Texture2D" uid="uid://bddnp3pgtbrsb" path="res://gameplay/assets/Rope Climber/Rope-2.png" id="9_2okcp"]
+[ext_resource type="Texture2D" uid="uid://bnbnp0tr2sdgc" path="res://menu/assets/Air Invasion/Air_Invasion_Menu-2.png" id="9_b2kny"]
 [ext_resource type="Texture2D" uid="uid://cvte1eeoudubk" path="res://gameplay/assets/Rope Climber/Rope-3.png" id="10_vyivm"]
+[ext_resource type="Texture2D" uid="uid://d01tmr35hd71j" path="res://menu/assets/Air Invasion/Air_Invasion_Menu-3.png" id="10_y3ygr"]
 [ext_resource type="Script" uid="uid://6koe6scy4wql" path="res://gameplay/label.gd" id="11_2okcp"]
+[ext_resource type="Texture2D" uid="uid://kb1b0b8q46q0" path="res://menu/assets/Air Invasion/Air_Invasion_Menu-4.png" id="11_xmdrq"]
+[ext_resource type="Texture2D" uid="uid://dpcrn0e1rkmmt" path="res://menu/assets/Air Invasion/Air_Invasion_Menu-5.png" id="12_47db2"]
 [ext_resource type="Script" uid="uid://7rix2c8wvtpw" path="res://gameplay/canvas_layer_2.gd" id="12_vyivm"]
 [ext_resource type="AudioStream" uid="uid://birm60ubwevym" path="res://gameplay/assets/Nature_ambience.mp3" id="13_uqgqx"]
 [ext_resource type="AudioStream" uid="uid://b6i5t3m0o34co" path="res://gameplay/assets/Restart_Flag.mp3" id="14_4rcc0"]
+[ext_resource type="Texture2D" uid="uid://dpl0kq1rx7smr" path="res://menu/assets/Animated Menu Buttons/Replay/Replay-1.png" id="19_n6aft"]
+[ext_resource type="Texture2D" uid="uid://or52o3odejib" path="res://menu/assets/Animated Menu Buttons/Replay/Replay-2.png" id="20_2qs7h"]
+[ext_resource type="Texture2D" uid="uid://dpsfopfj3y7bd" path="res://menu/assets/Animated Menu Buttons/Replay/Replay-3.png" id="21_wxx72"]
+[ext_resource type="Texture2D" uid="uid://cmbrx461s5idl" path="res://menu/assets/Animated Menu Buttons/Menu/Menu-1.png" id="22_2beay"]
+[ext_resource type="Texture2D" uid="uid://cli0dwb0fyjbk" path="res://menu/assets/Animated Menu Buttons/Menu/Menu-2.png" id="23_ni0ts"]
+[ext_resource type="Texture2D" uid="uid://bbxl80hekywnm" path="res://menu/assets/Animated Menu Buttons/Menu/Menu-3.png" id="24_g4a3a"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ktb3l"]
 panorama = ExtResource("1_41n4r")
@@ -90,6 +101,105 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_gh0v3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_53nod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b2kny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y3ygr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xmdrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_47db2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_ab7fx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_n6aft")]
+}
+
+[sub_resource type="Animation" id="Animation_jypll"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1667, 0.3333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_n6aft"), ExtResource("20_2qs7h"), ExtResource("21_wxx72")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1kvf"]
+_data = {
+&"RESET": SubResource("Animation_ab7fx"),
+&"default": SubResource("Animation_jypll")
+}
+
+[sub_resource type="Animation" id="Animation_h2b7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_2beay")]
+}
+
+[sub_resource type="Animation" id="Animation_obvfg"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1667, 0.3333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("22_2beay"), ExtResource("23_ni0ts"), ExtResource("24_g4a3a")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ivnk"]
+_data = {
+&"RESET": SubResource("Animation_h2b7s"),
+&"default": SubResource("Animation_obvfg")
+}
+
 [node name="Gameplay" type="Node3D" unique_id=1217063489]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=420973147]
@@ -152,6 +262,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.70715, 40.843758, 34.67399
 
 [node name="EnemySpawner" type="Timer" parent="." unique_id=682870018]
 wait_time = 2.0
+one_shot = true
 autostart = true
 script = ExtResource("6_7pdct")
 metadata/_custom_type_script = "uid://c75ienykomq0c"
@@ -208,33 +319,6 @@ shape = SubResource("CylinderShape3D_uk44f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 mesh = SubResource("CylinderMesh_uk44f")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1450931742]
-process_mode = 3
-script = ExtResource("12_vyivm")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=788118450]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.1254902, 0.1254902, 0.1254902, 0.46666667)
-
-[node name="Button" type="Button" parent="CanvasLayer2" unique_id=1062207630]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -165.0
-offset_top = -67.0
-offset_right = 165.0
-offset_bottom = 67.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 92
-text = "Restart"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1586809926]
 process_mode = 3
 
@@ -272,6 +356,37 @@ theme_override_font_sizes/font_size = 90
 text = "9"
 script = ExtResource("11_2okcp")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1450931742]
+process_mode = 3
+script = ExtResource("12_vyivm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2" unique_id=909779986]
+sprite_frames = SubResource("SpriteFrames_gh0v3")
+autoplay = "default"
+centered = false
+
+[node name="ReplayButton" type="TextureButton" parent="CanvasLayer2" unique_id=311289236]
+offset_left = 209.0
+offset_top = 308.0
+offset_right = 584.0
+offset_bottom = 529.0
+texture_normal = ExtResource("19_n6aft")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/ReplayButton" unique_id=366355863]
+libraries/ = SubResource("AnimationLibrary_i1kvf")
+autoplay = &"default"
+
+[node name="MenuButton" type="TextureButton" parent="CanvasLayer2" unique_id=547199192]
+offset_left = 223.0
+offset_top = 510.0
+offset_right = 598.0
+offset_bottom = 731.0
+texture_normal = ExtResource("22_2beay")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/MenuButton" unique_id=301020963]
+libraries/ = SubResource("AnimationLibrary_3ivnk")
+autoplay = &"default"
+
 [node name="NatureAmbience" type="AudioStreamPlayer" parent="." unique_id=1238120056]
 stream = ExtResource("13_uqgqx")
 autoplay = true
@@ -280,6 +395,7 @@ parameters/looping = true
 [node name="RestartFlag" type="AudioStreamPlayer" parent="." unique_id=2012969306]
 stream = ExtResource("14_4rcc0")
 
-[connection signal="pressed" from="CanvasLayer2/Button" to="CanvasLayer2" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/ReplayButton" to="CanvasLayer2" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/MenuButton" to="CanvasLayer2" method="_on_menu_button_pressed"]
 
 [editable path="Player"]

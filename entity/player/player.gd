@@ -23,6 +23,9 @@ const BRICK = preload("uid://c3q7cw5ireg4q")
 @onready var vfx: AnimatedSprite2D = $CanvasLayer/VFX
 
 @onready var dash_sound: AudioStreamPlayer = $Dash
+@onready var m_1_swing: AudioStreamPlayer = $M1Swing
+@onready var skill_release: AudioStreamPlayer = $SkillRelease
+@onready var spell_charge: AudioStreamPlayer = $SpellCharge
 
 var is_dashing := false
 var dash_timer := 0.0
@@ -47,15 +50,16 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			if wizard_hand.animation == "default":
+			if wizard_hand.animation == "default" or wizard_hand.animation == "run":
 				wizard_hand.play("attack")
+				m_1_swing.play()
 			
 				await get_tree().create_timer(0.25).timeout
 				if object_scan.is_colliding():
 					var collider = object_scan.get_collider()
 					if collider is RopeClimber:
 						Globals.current_rope_climber -= 1
-						collider.queue_free()
+						collider.kill()
 				
 				vfx.visible = true
 				vfx.play("attack")
@@ -66,11 +70,15 @@ func _unhandled_input(event):
 				wizard_hand.play("default")
 		
 		if event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.pressed and wizard_hand.animation == "default":
+			if event.pressed and (wizard_hand.animation == "default" or wizard_hand.animation == "run"):
 				wizard_hand.play("charge")
+				spell_charge.play()
 				charge_duration = 0
 			if not event.pressed and wizard_hand.animation == "charge":
+				spell_charge.stop()
 				if charge_duration >= 0.85:
+					skill_release.play()
+					
 					var brick: Brick = BRICK.instantiate()
 					brick.position = position + Vector3.UP * 1.5
 					brick.linear_velocity = Vector3.FORWARD.rotated(
@@ -121,9 +129,11 @@ func _physics_process(delta):
 	var current_speed = dash_speed if is_dashing else walk_speed
 	
 	if direction:
+		if wizard_hand.animation == "default": wizard_hand.play("run")
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:
+		if wizard_hand.animation == "run": wizard_hand.play("default")
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 	

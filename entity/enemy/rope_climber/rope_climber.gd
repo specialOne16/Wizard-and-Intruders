@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name RopeClimber
 
+@onready var attack_impct: AudioStreamPlayer3D = $AttackImpct
+
 var gravity_enabled = true
 var target_beacon: Beacon
 
@@ -14,3 +16,9 @@ func _physics_process(delta: float) -> void:
 		rotation.y = horizontal_velocity.angle() + PI / 2
 	
 	move_and_slide()
+
+func kill():
+	attack_impct.play()
+	visible = false
+	await attack_impct.finished
+	queue_free.call_deferred()

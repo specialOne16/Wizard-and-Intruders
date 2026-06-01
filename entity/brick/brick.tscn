@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4fpgvc24modk" path="res://entity/brick/brick.gd" id="1_uc3om"]
 [ext_resource type="PackedScene" uid="uid://dhkxjyqylirl2" path="res://entity/brick/assets/brick.glb" id="1_wgdo5"]
+[ext_resource type="AudioStream" uid="uid://dgcn8tiyla0h8" path="res://entity/brick/assets/Brick_drop.wav" id="3_xsmcc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uc3om"]
 friction = 0.2
@@ -29,6 +30,9 @@ shape = SubResource("BoxShape3D_uc3om")
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="BrickDrop" type="AudioStreamPlayer3D" parent="." unique_id=1046550184]
+stream = ExtResource("3_xsmcc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

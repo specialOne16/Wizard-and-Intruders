@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://b4u0lpgftyp01"]
+
+[ext_resource type="Script" uid="uid://blk0va244qhw6" path="res://menu/main_menu.gd" id="1_pfmj8"]
+[ext_resource type="Texture2D" uid="uid://dq8v24okra7ub" path="res://menu/assets/Main Menu/Main_Menu-1.png" id="1_qkuil"]
+[ext_resource type="AudioStream" uid="uid://bln2j04pm21h6" path="res://menu/assets/Rope_attaching.wav" id="2_8lj81"]
+[ext_resource type="Texture2D" uid="uid://cscpy6rvsgvo1" path="res://menu/assets/Main Menu/Main_Menu-2.png" id="2_pfmj8"]
+[ext_resource type="Texture2D" uid="uid://djgxj0fw35kc6" path="res://menu/assets/Main Menu/Main_Menu-3.png" id="3_iqufe"]
+[ext_resource type="AudioStream" uid="uid://bihimt0n33aiy" path="res://menu/assets/Towers_beyond_age.mp3" id="3_lbtey"]
+[ext_resource type="Texture2D" uid="uid://vqj5s8buj6wn" path="res://menu/assets/Main Menu/Main_Menu-4.png" id="4_8lj81"]
+[ext_resource type="Texture2D" uid="uid://csdtng80v3hao" path="res://menu/assets/Main Menu/Main_Menu-5.png" id="5_lbtey"]
+[ext_resource type="Texture2D" uid="uid://dkj68qqfb5pgj" path="res://menu/assets/Main Menu/Main_Menu-6.png" id="6_0wlwb"]
+[ext_resource type="Texture2D" uid="uid://ca31trljv1lfh" path="res://menu/assets/Main Menu/Main_Menu-7.png" id="7_yrnos"]
+[ext_resource type="Texture2D" uid="uid://db4ojlfmnat31" path="res://menu/assets/Main Menu/Main_Menu-8.png" id="8_stvbm"]
+[ext_resource type="Texture2D" uid="uid://krxmct82fmjr" path="res://menu/assets/Main Menu/Main_Menu-9.png" id="9_6kbw3"]
+[ext_resource type="Texture2D" uid="uid://dwssvit41otjw" path="res://menu/assets/Main Menu/Main_Menu-10.png" id="10_dptra"]
+[ext_resource type="Texture2D" uid="uid://dx6dcvwa3y8y4" path="res://menu/assets/Main Menu/Main_Menu-11.png" id="11_6iwxq"]
+[ext_resource type="Texture2D" uid="uid://c6a25mkt762u4" path="res://menu/assets/Main Menu/Main_Menu-12.png" id="12_4cuih"]
+[ext_resource type="Texture2D" uid="uid://dx8tlxt8o7pja" path="res://menu/assets/Main Menu/Main_Menu-13.png" id="13_g21un"]
+[ext_resource type="Texture2D" uid="uid://c0kjyl6nvdkf1" path="res://menu/assets/Main Menu/Main_Menu-14.png" id="14_ojt0h"]
+[ext_resource type="Texture2D" uid="uid://dh4urdeahhnbg" path="res://menu/assets/Main Menu/Main_Menu-15.png" id="15_ei13f"]
+[ext_resource type="Texture2D" uid="uid://dqvapbvvrnv63" path="res://menu/assets/Main Menu/Main_Menu-16.png" id="16_x8cqa"]
+[ext_resource type="Texture2D" uid="uid://bxu24h0vgi0q6" path="res://menu/assets/Animated Menu Buttons/Play/Play-1.png" id="17_v6ih2"]
+[ext_resource type="Texture2D" uid="uid://dsnwsyyfsujfq" path="res://menu/assets/Animated Menu Buttons/Play/Play-2.png" id="18_nn4q3"]
+[ext_resource type="Texture2D" uid="uid://cr1cuf421dpw6" path="res://menu/assets/Animated Menu Buttons/Play/Play-3.png" id="19_38bes"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6nlw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qkuil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pfmj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iqufe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8lj81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lbtey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0wlwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yrnos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_stvbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6kbw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dptra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6iwxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4cuih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g21un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ojt0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ei13f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_x8cqa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_7xn8h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_v6ih2")]
+}
+
+[sub_resource type="Animation" id="Animation_p6nnn"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1667, 0.3333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("17_v6ih2"), ExtResource("18_nn4q3"), ExtResource("19_38bes")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xedge"]
+_data = {
+&"RESET": SubResource("Animation_7xn8h"),
+&"default": SubResource("Animation_p6nnn")
+}
+
+[node name="MainMenu" type="Control" unique_id=2072686440]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfmj8")
+
+[node name="RopeAttaching" type="AudioStreamPlayer" parent="." unique_id=32703927]
+stream = ExtResource("2_8lj81")
+
+[node name="TowersBeyondAge" type="AudioStreamPlayer" parent="." unique_id=1003391286]
+stream = ExtResource("3_lbtey")
+autoplay = true
+parameters/looping = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1372715888]
+sprite_frames = SubResource("SpriteFrames_6nlw8")
+autoplay = "default"
+frame_progress = 0.74486226
+centered = false
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=1288395580]
+layout_mode = 0
+offset_left = 1955.0
+offset_top = 420.0
+offset_right = 2330.0
+offset_bottom = 641.0
+texture_normal = ExtResource("17_v6ih2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayButton" unique_id=1734192613]
+libraries/ = SubResource("AnimationLibrary_xedge")
+autoplay = &"default"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

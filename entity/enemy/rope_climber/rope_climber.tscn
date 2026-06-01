@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c6u7st6qinqru" path="res://entity/enemy/rope_climber/states/attack_beacon.gd" id="10_6tu4i"]
 [ext_resource type="Script" uid="uid://ms1wpobuhm0t" path="res://entity/enemy/rope_climber/states/idle.gd" id="13_7byyc"]
 [ext_resource type="AudioStream" uid="uid://kx7p2lehxqw4" path="res://entity/enemy/rope_climber/assets/Rope_climber_punch.wav" id="14_sc8kc"]
+[ext_resource type="AudioStream" uid="uid://c4kesuv76mkwo" path="res://entity/enemy/rope_climber/assets/Attack_impct.wav" id="15_68g2t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l7q2e"]
 radius = 0.3
@@ -86,3 +87,6 @@ metadata/_custom_type_script = "uid://ms1wpobuhm0t"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1767040296]
 stream = ExtResource("14_sc8kc")
+
+[node name="AttackImpct" type="AudioStreamPlayer3D" parent="." unique_id=1509678653]
+stream = ExtResource("15_68g2t")

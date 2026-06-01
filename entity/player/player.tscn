@@ -48,7 +48,10 @@
 [ext_resource type="Texture2D" uid="uid://ci40ic0bl05qa" path="res://entity/player/assets/Wizard VFX & UI/Parry VFX/Parry_VFX-2.png" id="46_aennr"]
 [ext_resource type="Texture2D" uid="uid://bjtl3jqbduhnx" path="res://entity/player/assets/Wizard VFX & UI/Parry VFX/Parry_VFX-3.png" id="47_pwt3y"]
 [ext_resource type="Texture2D" uid="uid://0eheh2rmuy70" path="res://entity/player/assets/Wizard VFX & UI/Parry VFX/Parry_VFX-4.png" id="48_6svrl"]
+[ext_resource type="AudioStream" uid="uid://dcrie2sgjaaqj" path="res://entity/player/audio/M1_swing.mp3" id="50_ddg0y"]
 [ext_resource type="AudioStream" uid="uid://x1am1veipxyi" path="res://entity/player/audio/Dash.wav" id="50_eiu06"]
+[ext_resource type="AudioStream" uid="uid://d3m6eiv8upnef" path="res://entity/player/audio/Skill_release.wav" id="51_314bx"]
+[ext_resource type="AudioStream" uid="uid://fgvggxkb4gbj" path="res://entity/player/audio/Spell_charge.wav" id="52_1ldwq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uk44f"]
 
@@ -308,9 +311,19 @@ centered = false
 
 [node name="WizardHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=926413079]
 sprite_frames = SubResource("SpriteFrames_nqnt1")
-animation = &"release"
+animation = &"run"
 autoplay = "default"
+frame_progress = 0.34132048
 centered = false
 
 [node name="Dash" type="AudioStreamPlayer" parent="." unique_id=626396517]
 stream = ExtResource("50_eiu06")
+
+[node name="M1Swing" type="AudioStreamPlayer" parent="." unique_id=458934986]
+stream = ExtResource("50_ddg0y")
+
+[node name="SkillRelease" type="AudioStreamPlayer" parent="." unique_id=1981140266]
+stream = ExtResource("51_314bx")
+
+[node name="SpellCharge" type="AudioStreamPlayer" parent="." unique_id=104485377]
+stream = ExtResource("52_1ldwq")
