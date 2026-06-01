@@ -80,12 +80,8 @@ func _unhandled_input(event):
 					skill_release.play()
 					
 					var brick: Brick = BRICK.instantiate()
-					brick.position = position + Vector3.UP * 1.5
-					brick.linear_velocity = Vector3.FORWARD.rotated(
-						Vector3.UP, object_scan.global_rotation.y
-					).rotated(
-						Vector3.MODEL_RIGHT, object_scan.global_rotation.x
-					) * 15
+					brick.global_transform = object_scan.global_transform
+					brick.linear_velocity = object_scan.global_position.direction_to($Head/Target.global_position) * 15
 					add_sibling(brick)
 					
 					wizard_hand.play("release")
