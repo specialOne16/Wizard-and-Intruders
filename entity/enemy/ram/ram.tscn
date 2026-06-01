@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c5xn4nkkw1on3"]
+
+[ext_resource type="Script" uid="uid://dt8qf6b3gguck" path="res://entity/enemy/ram/ram.gd" id="1_dvfc8"]
+[ext_resource type="PackedScene" uid="uid://cocwy3rux11te" path="res://entity/enemy/ram/assets/Ram_Walk.glb" id="1_ogrp3"]
+[ext_resource type="Script" uid="uid://bnwynt8i480o4" path="res://system/state_machine.gd" id="3_ba337"]
+[ext_resource type="Script" uid="uid://mnvormcsll52" path="res://entity/enemy/ram/states/running.gd" id="4_84hkh"]
+[ext_resource type="Script" uid="uid://bep3fqwahlsnm" path="res://entity/enemy/ram/states/attack_door.gd" id="5_t7k4d"]
+[ext_resource type="AudioStream" uid="uid://c4kesuv76mkwo" path="res://entity/enemy/rope_climber/assets/Attack_impct.wav" id="6_85k5n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogrp3"]
+size = Vector3(1, 15, 21)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dvfc8"]
+size = Vector3(4, 3, 4)
+
+[node name="Ram" type="CharacterBody3D" unique_id=1595383870]
+collision_layer = 2
+collision_mask = 18
+script = ExtResource("1_dvfc8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1129786072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+shape = SubResource("BoxShape3D_ogrp3")
+
+[node name="Ancient Castle with misty mountain" parent="." unique_id=1828334989 instance=ExtResource("1_ogrp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, -15, -74)
+
+[node name="Tree_004" parent="Ancient Castle with misty mountain" index="5" unique_id=1741812075]
+transform = Transform3D(15.827308, 0.40488, 1.3884184, 0.35452268, -15.954566, 0.2701545, 2.1041982, -0.35733578, -10.488888, 53.703365, 24.191757, 60.926502)
+
+[node name="DoorDetector" type="Area3D" parent="." unique_id=1607950479]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorDetector" unique_id=1173944696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -11)
+shape = SubResource("BoxShape3D_dvfc8")
+
+[node name="StateMachine" type="Node" parent="." unique_id=2014398254]
+script = ExtResource("3_ba337")
+metadata/_custom_type_script = "uid://bnwynt8i480o4"
+
+[node name="RunningRam" type="Node" parent="StateMachine" unique_id=135706824]
+script = ExtResource("4_84hkh")
+metadata/_custom_type_script = "uid://mnvormcsll52"
+
+[node name="AttackDoorRam" type="Node" parent="StateMachine" unique_id=139365853]
+script = ExtResource("5_t7k4d")
+metadata/_custom_type_script = "uid://bep3fqwahlsnm"
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1162142745]
+
+[node name="AttackImpct" type="AudioStreamPlayer3D" parent="." unique_id=733799007]
+stream = ExtResource("6_85k5n")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1236099122]
+process_mode = 3
+volume_db = 10.0
+
+[editable path="Ancient Castle with misty mountain"]

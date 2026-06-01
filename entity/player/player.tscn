@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://f614lj70jrly"]
 
 [ext_resource type="Script" uid="uid://cggahox0blmo8" path="res://entity/player/player.gd" id="1_nqnt1"]
+[ext_resource type="Script" uid="uid://cnmmn5oxipa82" path="res://entity/player/head.gd" id="2_314bx"]
 [ext_resource type="Texture2D" uid="uid://bu30a8g4p8i46" path="res://entity/player/assets/Wizard Animations/Attack/Attack-1.png" id="2_k7iom"]
 [ext_resource type="Texture2D" uid="uid://ctmgygcsw0vj8" path="res://entity/player/assets/Wizard Animations/Attack/Attack-2.png" id="3_lnh62"]
 [ext_resource type="Texture2D" uid="uid://dhk5r8apsx8dl" path="res://entity/player/assets/Wizard Animations/Attack/Attack-3.png" id="4_r4sr7"]
@@ -269,6 +270,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 current = true
 
 [node name="Head" type="Camera3D" parent="Head" unique_id=1771288964]
+script = ExtResource("2_314bx")
 
 [node name="ObjectScan" type="RayCast3D" parent="Head" unique_id=1732353693]
 target_position = Vector3(0, 0, -4)

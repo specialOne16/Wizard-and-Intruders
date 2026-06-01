@@ -2,6 +2,7 @@ extends Node
 
 var current_rope_climber = 0
 var brach_count = 0
+var door_damage = 0
 
 const BEACON_1_ST_WARNING = preload("uid://beewmb64e1fj2")
 const BEACON_2_ND_WARNING = preload("uid://dbylvyso0pia1")

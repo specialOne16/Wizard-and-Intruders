@@ -9,5 +9,5 @@ func _on_lifetime_timeout() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	brick_drop.play()
-	if body is RopeClimber:
+	if body.has_method("kill"):
 		body.kill()

@@ -32,5 +32,4 @@ func spawn():
 	
 	Globals.current_rope_climber += 1
 	var dlay = a - ((a * b) / (Globals.current_rope_climber + b))
-	print(dlay)
 	start(dlay)

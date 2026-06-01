@@ -87,6 +87,7 @@ metadata/_custom_type_script = "uid://ms1wpobuhm0t"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1767040296]
 stream = ExtResource("14_sc8kc")
+volume_db = -10.0
 
 [node name="AttackImpct" type="AudioStreamPlayer3D" parent="." unique_id=1509678653]
 stream = ExtResource("15_68g2t")

@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://f614lj70jrly" path="res://entity/player/player.tscn" id="3_ueusv"]
 [ext_resource type="PackedScene" uid="uid://b8igi5ieb7ifi" path="res://environments/assets/EntireCastle_Collision.tscn" id="5_gvicd"]
 [ext_resource type="Script" uid="uid://c75ienykomq0c" path="res://gameplay/enemy_spawner.gd" id="6_7pdct"]
+[ext_resource type="PackedScene" uid="uid://j3j6w6d8aomv" path="res://gameplay/assets/Door_Compressed.glb" id="6_n6aft"]
 [ext_resource type="PackedScene" uid="uid://cqpdlfes88lst" path="res://entity/beacon/beacon.tscn" id="6_uk44f"]
+[ext_resource type="Script" uid="uid://ccfb0q28pq4m8" path="res://gameplay/ram_spawner.gd" id="7_q2ml8"]
 [ext_resource type="PackedScene" uid="uid://d0jd2y8dghwjx" path="res://gameplay/flag_ui.tscn" id="7_uk44f"]
 [ext_resource type="Texture2D" uid="uid://2i4tsujhh5gw" path="res://menu/assets/Air Invasion/Air_Invasion_Menu-1.png" id="8_53nod"]
 [ext_resource type="Texture2D" uid="uid://40uhg83q1hoo" path="res://gameplay/assets/Rope Climber/Rope-1.png" id="8_nimes"]
@@ -18,13 +20,30 @@
 [ext_resource type="Texture2D" uid="uid://dpcrn0e1rkmmt" path="res://menu/assets/Air Invasion/Air_Invasion_Menu-5.png" id="12_47db2"]
 [ext_resource type="Script" uid="uid://7rix2c8wvtpw" path="res://gameplay/canvas_layer_2.gd" id="12_vyivm"]
 [ext_resource type="AudioStream" uid="uid://birm60ubwevym" path="res://gameplay/assets/Nature_ambience.mp3" id="13_uqgqx"]
+[ext_resource type="PackedScene" uid="uid://dn7snon2k8mmd" path="res://gameplay/door_ui.tscn" id="14_2qs7h"]
 [ext_resource type="AudioStream" uid="uid://b6i5t3m0o34co" path="res://gameplay/assets/Restart_Flag.mp3" id="14_4rcc0"]
 [ext_resource type="Texture2D" uid="uid://dpl0kq1rx7smr" path="res://menu/assets/Animated Menu Buttons/Replay/Replay-1.png" id="19_n6aft"]
 [ext_resource type="Texture2D" uid="uid://or52o3odejib" path="res://menu/assets/Animated Menu Buttons/Replay/Replay-2.png" id="20_2qs7h"]
+[ext_resource type="Texture2D" uid="uid://buq7ub3r0kona" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-1.png" id="21_vrp3b"]
 [ext_resource type="Texture2D" uid="uid://dpsfopfj3y7bd" path="res://menu/assets/Animated Menu Buttons/Replay/Replay-3.png" id="21_wxx72"]
 [ext_resource type="Texture2D" uid="uid://cmbrx461s5idl" path="res://menu/assets/Animated Menu Buttons/Menu/Menu-1.png" id="22_2beay"]
+[ext_resource type="Texture2D" uid="uid://vatxexxxsmd0" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-2.png" id="22_ooaiw"]
+[ext_resource type="Texture2D" uid="uid://crsoyi01mqfi2" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-3.png" id="23_gn87n"]
 [ext_resource type="Texture2D" uid="uid://cli0dwb0fyjbk" path="res://menu/assets/Animated Menu Buttons/Menu/Menu-2.png" id="23_ni0ts"]
 [ext_resource type="Texture2D" uid="uid://bbxl80hekywnm" path="res://menu/assets/Animated Menu Buttons/Menu/Menu-3.png" id="24_g4a3a"]
+[ext_resource type="Texture2D" uid="uid://dfl1w74ulbptk" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-4.png" id="24_p35s3"]
+[ext_resource type="Texture2D" uid="uid://drgwc2oeh5n07" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-5.png" id="25_bcr21"]
+[ext_resource type="Texture2D" uid="uid://b6griqxi41i8c" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-6.png" id="26_i5xiv"]
+[ext_resource type="Texture2D" uid="uid://csgam43kt0ywx" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-7.png" id="27_4xxsf"]
+[ext_resource type="Texture2D" uid="uid://gy8omponpel8" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-8.png" id="28_vbdwp"]
+[ext_resource type="Texture2D" uid="uid://df7pfrwh0c2j7" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-9.png" id="29_le6kb"]
+[ext_resource type="Texture2D" uid="uid://ccugg0e640rf7" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-10.png" id="30_21722"]
+[ext_resource type="Texture2D" uid="uid://ckvbw4yxhcy21" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-11.png" id="31_32jyh"]
+[ext_resource type="Texture2D" uid="uid://dsfbna0j2y6us" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-12.png" id="32_p0n5o"]
+[ext_resource type="Texture2D" uid="uid://bycdx21yetpa4" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-13.png" id="33_iwcu3"]
+[ext_resource type="Texture2D" uid="uid://dp40ed4yql6vk" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-14.png" id="34_nrrkf"]
+[ext_resource type="Texture2D" uid="uid://dl3srjyb8mwq5" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-15.png" id="35_0hnnk"]
+[ext_resource type="Texture2D" uid="uid://du327vygd54jk" path="res://menu/assets/Ground Invasion/Ground_Invasion_Menu-16.png" id="36_pxbi3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ktb3l"]
 panorama = ExtResource("1_41n4r")
@@ -48,6 +67,9 @@ albedo_color = Color(0.28344613, 0.45991248, 0.27332222, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_uk44f"]
 material = SubResource("StandardMaterial3D_7pdct")
 size = Vector3(100000, 1, 100000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qs7h"]
+size = Vector3(11.05957, 32.244568, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uk44f"]
 size = Vector3(200, 1, 200)
@@ -120,7 +142,60 @@ animations = [{
 "texture": ExtResource("12_47db2")
 }],
 "loop": true,
-"name": &"default",
+"name": &"air",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_vrp3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ooaiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gn87n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_p35s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bcr21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_i5xiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4xxsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vbdwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_le6kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_21722")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_32jyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_p0n5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_iwcu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_nrrkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_0hnnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pxbi3")
+}],
+"loop": true,
+"name": &"ground",
 "speed": 6.0
 }]
 
@@ -235,6 +310,10 @@ shape = SubResource("BoxShape3D_gvicd")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Floor" unique_id=1088641804]
 mesh = SubResource("BoxMesh_uk44f")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Map/Floor" unique_id=1711566774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34506607, 15.622284, -4.6719666)
+shape = SubResource("BoxShape3D_2qs7h")
+
 [node name="PlayerFallArea" type="Area3D" parent="Map" unique_id=1499105099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 20, 43)
 collision_mask = 0
@@ -259,6 +338,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.046284, 40.843758, 32.8509
 [node name="RightBeacon" parent="Map" unique_id=945777867 instance=ExtResource("6_uk44f")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.70715, 40.843758, 34.673992)
+
+[node name="Ancient Castle with misty mountain2" parent="Map" unique_id=1854411040 instance=ExtResource("6_n6aft")]
 
 [node name="EnemySpawner" type="Timer" parent="." unique_id=682870018]
 wait_time = 2.0
@@ -319,6 +400,13 @@ shape = SubResource("CylinderShape3D_uk44f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 mesh = SubResource("CylinderMesh_uk44f")
 
+[node name="RamSpawner" type="Timer" parent="." unique_id=1604711354 node_paths=PackedStringArray("spawn_position")]
+script = ExtResource("7_q2ml8")
+spawn_position = NodePath("Node3D")
+
+[node name="Node3D" type="Node3D" parent="RamSpawner" unique_id=279125810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6599, 11.011826, 124.15317)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1586809926]
 process_mode = 3
 
@@ -356,34 +444,55 @@ theme_override_font_sizes/font_size = 90
 text = "9"
 script = ExtResource("11_2okcp")
 
+[node name="DoorUi" parent="CanvasLayer" unique_id=2055544969 instance=ExtResource("14_2qs7h")]
+position = Vector2(2461, 327)
+
+[node name="DoorUi2" parent="CanvasLayer" unique_id=1872065995 instance=ExtResource("14_2qs7h")]
+position = Vector2(2300, 329)
+number = 2
+
+[node name="DoorUi3" parent="CanvasLayer" unique_id=427106502 instance=ExtResource("14_2qs7h")]
+position = Vector2(2137, 330)
+number = 1
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1450931742]
 process_mode = 3
 script = ExtResource("12_vyivm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer2" unique_id=909779986]
 sprite_frames = SubResource("SpriteFrames_gh0v3")
-autoplay = "default"
+animation = &"ground"
 centered = false
 
-[node name="ReplayButton" type="TextureButton" parent="CanvasLayer2" unique_id=311289236]
+[node name="Control" type="Control" parent="CanvasLayer2" unique_id=1998669544]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1860.0
+offset_top = 161.0
+offset_right = 1900.0
+offset_bottom = 201.0
+
+[node name="ReplayButton" type="TextureButton" parent="CanvasLayer2/Control" unique_id=311289236]
+layout_mode = 0
 offset_left = 209.0
 offset_top = 308.0
 offset_right = 584.0
 offset_bottom = 529.0
 texture_normal = ExtResource("19_n6aft")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/ReplayButton" unique_id=366355863]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/Control/ReplayButton" unique_id=366355863]
 libraries/ = SubResource("AnimationLibrary_i1kvf")
 autoplay = &"default"
 
-[node name="MenuButton" type="TextureButton" parent="CanvasLayer2" unique_id=547199192]
+[node name="MenuButton" type="TextureButton" parent="CanvasLayer2/Control" unique_id=547199192]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 510.0
 offset_right = 598.0
 offset_bottom = 731.0
 texture_normal = ExtResource("22_2beay")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/MenuButton" unique_id=301020963]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2/Control/MenuButton" unique_id=301020963]
 libraries/ = SubResource("AnimationLibrary_3ivnk")
 autoplay = &"default"
 
@@ -395,7 +504,8 @@ parameters/looping = true
 [node name="RestartFlag" type="AudioStreamPlayer" parent="." unique_id=2012969306]
 stream = ExtResource("14_4rcc0")
 
-[connection signal="pressed" from="CanvasLayer2/ReplayButton" to="CanvasLayer2" method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer2/MenuButton" to="CanvasLayer2" method="_on_menu_button_pressed"]
+[connection signal="timeout" from="RamSpawner" to="RamSpawner" method="_on_timeout"]
+[connection signal="pressed" from="CanvasLayer2/Control/ReplayButton" to="CanvasLayer2" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Control/MenuButton" to="CanvasLayer2" method="_on_menu_button_pressed"]
 
 [editable path="Player"]

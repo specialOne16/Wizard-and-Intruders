@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dn7snon2k8mmd"]
+
+[ext_resource type="Texture2D" uid="uid://cef5jb5gbpyd2" path="res://gameplay/assets/Gate Destroyed/Gate_Destroyed_-1.png" id="1_mt5rg"]
+[ext_resource type="Texture2D" uid="uid://e5si1lr3a406" path="res://gameplay/assets/Gate Destroyed/Gate_Destroyed_-2.png" id="2_5hci7"]
+[ext_resource type="Texture2D" uid="uid://3u2iqegjhtdf" path="res://gameplay/assets/Gate Destroyed/Gate_Destroyed_-3.png" id="3_aigaq"]
+[ext_resource type="Texture2D" uid="uid://chgsmsbu04mwo" path="res://gameplay/assets/Gate Safe/Gate-1.png" id="4_j5qps"]
+[ext_resource type="Texture2D" uid="uid://des1ybnx5ybs1" path="res://gameplay/assets/Gate Safe/Gate-2.png" id="5_p3qhg"]
+[ext_resource type="Texture2D" uid="uid://i6gnpiya730w" path="res://gameplay/assets/Gate Safe/Gate-3.png" id="6_ll2xh"]
+[ext_resource type="Script" uid="uid://dxtv6rr4p3bqj" path="res://gameplay/door_ui.gd" id="7_5hci7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sp0jm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mt5rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5hci7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aigaq")
+}],
+"loop": true,
+"name": &"broke",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j5qps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p3qhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ll2xh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="DoorUi" type="AnimatedSprite2D" unique_id=2055544969]
+sprite_frames = SubResource("SpriteFrames_sp0jm")
+autoplay = "default"
+script = ExtResource("7_5hci7")
